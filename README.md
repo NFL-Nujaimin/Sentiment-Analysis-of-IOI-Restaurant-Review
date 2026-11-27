@@ -1,44 +1,52 @@
-# Sentiment-Analysis-of-IOI-Restaurant-Review
+# Sentiment Analysis of Restaurant Reviews (IOI City Mall)
 
-## Introduction
+End-to-end NLP pipeline on Google Maps reviews of five restaurants in IOI City Mall, Putrajaya, Malaysia: scrape the reviews, clean the text, classify sentiment, find the topics customers talk about, and present it in a Power BI dashboard for restaurant managers. Text Analytics course project at UNITEN.
 
-This repository hosts the project on sentiment analysis of customer reviews for five distinguished restaurants in IOI City Mall, Putrajaya. The aim is to utilize advanced natural language processing techniques to categorize reviews into positive or negative sentiments, providing actionable insights for restaurant managers to enhance customer satisfaction and service quality.
+## Pipeline
 
-## Problem Statement
+1. **Scraping**: Selenium and BeautifulSoup collect reviews and star ratings from Google Maps (2,577 reviews across KyoChon 1991, Ombak Kitchen, Mr Dakgalbi, Nando's and The Manhattan Fish Market).
+2. **Preprocessing**: NLTK tokenisation, stop-word removal and lemmatisation.
+3. **Sentiment**: lexicon-based classification with **TextBlob** and **VADER**, evaluated against labels derived from each review's star rating.
+4. **Topic modelling**: TF-IDF and **LDA** (scikit-learn), with topics grouped into Food Quality, Customer Service and Restaurant Condition.
+5. **Dashboard**: Power BI visualisation of sentiment and topics per restaurant.
 
-Online reviews significantly influence dining and shopping decisions. However, restaurant owners face challenges in sifting through numerous varied reviews, which complicates understanding of customer satisfaction and identification of areas for improvement. This project addresses these issues by systematically analyzing and visualizing the sentiments expressed in customer reviews.
+## Results
 
-## Project Scope
+| Model | Accuracy | Macro F1 | Negative F1 | Positive F1 |
+|---|---|---|---|---|
+| TextBlob | 0.80 | 0.55 | 0.69 | 0.89 |
+| VADER | 0.80 | 0.55 | 0.64 | 0.89 |
 
-- Focus: Sentiment analysis of 1000 to 2000 Google reviews per restaurant within IOI City Mall.
-- Objective: Categorize feedback to better understand customer experiences and provide a visualization of sentiment analysis scores.
-- Tools Used: Selenium for web scraping, BeautifulSoup for parsing HTML, NLTK for natural language processing, TextBlob and VADER for sentiment analysis.
+Both lexicons handle clearly positive reviews well but struggle with neutral ones (F1 under 0.15), since 3-star reviews often mix praise and complaints. A fine-tuned transformer (for example DistilBERT) would be the natural next step.
 
-## Data Collection
+## Dashboard
 
-Data is collected using Selenium and BeautifulSoup by navigating to Google Maps reviews pages, extracting, and parsing review content, then storing this data for analysis.
+![Power BI dashboard 1](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/8ac2691b-f63f-4fb8-b9b2-4d3c6433063f)
 
-## Analysis 
+![Power BI dashboard 2](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/451fa4b1-0728-4769-8518-e23d6fb492db)
 
-Sentiment analysis is performed using TextBlob and VADER tools, classifying reviews into positive, neutral, or negative categories. This includes a comparative evaluation of tool performance through accuracy scores and precision metrics.
+![Power BI dashboard 3](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e195e3c4-41b2-4328-9d61-a389be268f15)
 
-## Visualization 
+![Power BI dashboard 4](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e0c96dbc-9c46-45de-9587-43ba2bc02593)
 
-Visualization of the sentiment analysis is facilitated through PowerBI, presenting an intuitive representation of sentiment distribution across the reviewed restaurants. The visualization are shown below. 
+![Power BI dashboard 5](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/4c53d196-1849-4e1e-805b-3586ae542049)
 
-![image](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/8ac2691b-f63f-4fb8-b9b2-4d3c6433063f)
+Presentation video: https://youtu.be/_S_sW6lxNY4
 
-![image](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/451fa4b1-0728-4769-8518-e23d6fb492db)
+## Files
 
-![image](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e195e3c4-41b2-4328-9d61-a389be268f15)
+| File | What it is |
+|---|---|
+| `sentiment_analysis.ipynb` | Scraping, preprocessing, sentiment analysis and topic modelling |
+| `restaurant_reviews.csv` | Collected reviews with processed text, predicted sentiment and topic |
 
-![image](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e0c96dbc-9c46-45de-9587-43ba2bc02593)
+## Run it
 
-![image](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/4c53d196-1849-4e1e-805b-3586ae542049)
+```bash
+pip install pandas nltk textblob vaderSentiment scikit-learn selenium beautifulsoup4 jupyter
+jupyter notebook sentiment_analysis.ipynb
+```
 
-## Additional Resources
+The scraping cell needs Chrome and ChromeDriver. To skip it, start from the preprocessing section, which reads `restaurant_reviews.csv`.
 
-Presentation Video: https://youtu.be/_S_sW6lxNY4
-
-Thank you for visiting my repository. I welcome any contributions or suggestions to improve the analysis and findings of this project.
-
+Tools: Python, Selenium, BeautifulSoup, NLTK, TextBlob, VADER, scikit-learn, Power BI.
