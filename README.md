@@ -21,15 +21,15 @@ Both lexicons handle clearly positive reviews well but struggle with neutral one
 
 ## Dashboard
 
-![Dashboard overview](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/8ac2691b-f63f-4fb8-b9b2-4d3c6433063f)
+![Power BI dashboard 1](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/8ac2691b-f63f-4fb8-b9b2-4d3c6433063f)
 
-![Sentiment by restaurant](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/451fa4b1-0728-4769-8518-e23d6fb492db)
+![Power BI dashboard 2](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/451fa4b1-0728-4769-8518-e23d6fb492db)
 
-![Topics](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e195e3c4-41b2-4328-9d61-a389be268f15)
+![Power BI dashboard 3](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e195e3c4-41b2-4328-9d61-a389be268f15)
 
-![Restaurant detail](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e0c96dbc-9c46-45de-9587-43ba2bc02593)
+![Power BI dashboard 4](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/e0c96dbc-9c46-45de-9587-43ba2bc02593)
 
-![Review detail](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/4c53d196-1849-4e1e-805b-3586ae542049)
+![Power BI dashboard 5](https://github.com/NFL-Nujaimin/Sentiment-Analysis-of-IOI-Restaurant-Review/assets/126408968/4c53d196-1849-4e1e-805b-3586ae542049)
 
 Presentation video: https://youtu.be/_S_sW6lxNY4
 
